@@ -1,0 +1,21 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Tab Summary</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Round no</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of tab; let i = index" class="mb-2">
+        <td>Round {{ i + 1 }}</td>
+        <td>{{ order.total.toFixed(2) | currency:'R' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-4">
+    <p><strong>Total:</strong> ${{ getTotal().toFixed(2) }}</p>
+    <p *ngIf="splitCount > 1"><strong>Per Person:</strong> ${{ getPerPerson().toFixed(2) }}</p>
+  </div>
+</div>

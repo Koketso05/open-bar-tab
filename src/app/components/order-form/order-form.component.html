@@ -1,0 +1,16 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Order Form</h2>
+  <form>
+    <div class="row my-3">
+      <div class="col-4" *ngFor="let beverage of beverages; let i = index">
+        <label [for]="i" class="form-label">{{ beverage.name }}</label>
+        <input type="number" min="0" class="form-control" [id]="i" aria-describedby="emailHelp">
+      </div>
+    </div>
+  </form>
+  <div class="my-3">
+    <label class="block">Split Bill (People):</label>
+    <input type="number" min="1" class="form-control" aria-describedby="emailHelp" [(ngModel)]="splitCount">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="submitOrder()">Add to Tab</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mx-auto p-4">
+  <app-beverage-list [beverages]="beverages"></app-beverage-list>
+
+
+
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="Place Order">
+      <app-order-form [beverages]="beverages" (addToTab)="addToTab($event)"></app-order-form>
+    </mat-tab>
+    <mat-tab label="View Bill">
+      <app-tab-summary [tab]="tab" [splitCount]="1"></app-tab-summary>
+      <app-export-tab [tab]="tab"></app-export-tab>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+</div>
+<router-outlet />

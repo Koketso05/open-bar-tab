@@ -1,0 +1,19 @@
+<div class="p-4">
+  <h3 class="text-xl font-bold mb-4">List of Beverages</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Beverage</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beverage of beverages">
+        <td>{{ beverage.name }}</td>
+        <td>{{ beverage.price.toFixed(2) | currency:'R' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
